@@ -1,0 +1,16 @@
+syntax = "proto3";
+package netdisk;
+
+option go_package = "./";
+
+service FileMgt {
+  rpc UploadFile(UploadFileReq) returns (UploadFileRsp) {}
+}
+
+message UploadFileReq{
+  string fileName = 1;
+
+}
+
+message UploadFileRsp{
+}
