@@ -4,12 +4,15 @@ package netdisk;
 option go_package = "./";
 
 service FileMgt {
-  rpc UploadFile(UploadFileReq) returns (UploadFileRsp) {}
+  rpc UploadFile(stream UploadFileReq) returns (UploadFileRsp) {}
 }
 
 message UploadFileReq{
-  string fileName = 1;
-
+  string name = 1;
+  string type = 2;
+  string path = 3;
+  string uin = 4;
+  bytes content = 5;
 }
 
 message UploadFileRsp{
