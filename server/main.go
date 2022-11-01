@@ -42,7 +42,6 @@ func newListener(opt ...grpc.ServerOption) net.Listener {
 func main() {
 	s := grpc.NewServer()
 	pb.RegisterFileMgtServer(s, gateway.NewFileMgtServiceImpl())
-
 	if err := s.Serve(newListener()); err != nil {
 		log.Fatal(err)
 	}
